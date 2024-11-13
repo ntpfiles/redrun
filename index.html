@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reddit User Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f2f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #0079d3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005fa3;
+        }
+        #result {
+            margin-top: 20px;
+            white-space: pre-wrap;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reddit User Analyzer</h1>
+        
+        <div class="input-group">
+            <label for="apiKey">OpenAI API Key:</label>
+            <input type="text" id="apiKey" placeholder="Enter your OpenAI API key">
+        </div>
+
+        <div class="input-group">
+            <label for="username">Reddit Username:</label>
+            <input type="text" id="username" placeholder="Enter Reddit username">
+        </div>
+
+        <div class="input-group">
+            <label for="prompt">Analysis Prompt:</label>
+            <textarea id="prompt" rows="4">Create a comprehensive psychological profile of the Reddit user based on their comment history. Analyze their personality traits, communication style, interests, and potential behavioral patterns. Provide an objective and unbiased assessment, including both positive and negative aspects. Support your conclusions with specific examples from their comments.</textarea>
+        </div>
+
+        <button onclick="analyzeUser()">Analyze User</button>
+        <button onclick="copyResult()">Copy Result</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
